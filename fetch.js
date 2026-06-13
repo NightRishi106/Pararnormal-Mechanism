@@ -1,0 +1,9 @@
+const https = require('https');
+
+https.get("https://id-preview--eb9c1bc9-e6be-4ffa-8276-7def2a142e0e.lovable.app/?__lovable_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9%2EeyJ1c2VyX2lkIjoiRU9JM01Kd21aUWJuVWt0bzJ2ZnkyUGdtY3pSMiIsInByb2plY3RfaWQiOiJlYjljMWJjOS1lNmJlLTRmZmEtODI3Ni03ZGVmMmExNDJlMGUiLCJhY2Nlc3NfdHlwZSI6InByb2plY3QiLCJpc3MiOiJsb3ZhYmxlLWFwaSIsInN1YiI6ImViOWMxYmM5LWU2YmUtNGZmYS04Mjc2LTdkZWYyYTE0MmUwZSIsImF1ZCI6WyJsb3ZhYmxlLWFwcCJdLCJleHAiOjE3ODE5MjQ5ODcsIm5iZiI6MTc4MTMyMDE4NywiaWF0IjoxNzgxMzIwMTg3fQ%2EYvEFvIl0KT_1RePCnAS9sIK9aN3BRtnAc3hSKHEvE-OiVWgpc8mxaSRQUpfOj_xG5D9pr36iCp3KGBFSR4vJnRn0nRtCJ7Ghorha9GWojI7uCi67jk1lfsCQlWsoV7eaFrQsk3m2U-dJ8Mz2w0DJrCVYEBhj91qZSR1M1KDDrH8Ao2leFBSm__E6MyJll7yFGL1qudG3MSgfjLUdxM5hWI7RBltG57C4__E9yi8iUe4__dIvajhBt68MzHCwLEw3TDAQef5pFk03h7qV8w3jleTTl9RISBdbpEDANm4yrsPekOee3vidrfGrvY5SJ1wOi7JIwt_g72I6QwAHmbwSB9RnhQRP2w31O5kbLwxXboFSxrCXAWPP755NPqa4yE_TRMt5ATW5IM31xhK1tu2UckT00RsqF9l1ow9BhowPag_I3FCFqD6eIiJTcJP5hNNS0TMUGyRQuVNHVVWSpUSuzrWn5N5JXS53tIguqOr24k-EBglcj65fC44zGDHgOEcIMRbY3xRV43HU6gDKYlqCfDnWDP_inJ4O2e1yFmIUNjW7yo6o2gtgQkXv1N-7IhSkLnGbc6ZcOfRLdGEbqHWOsuW7-UDX9uCXjPiJT6mYJO2R2-Dh2FFQjSkyzoHDC6v9WF8QyoAqvjox1nGuZjQailH-S9IcbkuLN4Lwte1NbCc", (res) => {
+  let data = '';
+  res.on('data', (chunk) => { data += chunk; });
+  res.on('end', () => { console.log(data); });
+}).on('error', (err) => {
+  console.error(err.message);
+});
